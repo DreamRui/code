@@ -1,0 +1,124 @@
+#!/user/bin/python(UNIX下运行)
+#-*-coding:UTF-8-*-（编码制）
+#注释
+import sys(导入sys模块)
+print sys.path(路径结合)
+print sys.argv(参数列表)
+
+例1：
+class Teacher 	#类首字母大写
+__name=""	#私有实例变量必须以两个下划线开头
+def __init__(self,name)	#私有方法init	def定义函数
+self.__name = name	#self相当于Java里面的this 
+def getName(self):	#方法的首字母大写，其后的每个单词的首字母使用大写，定义公有方法getName
+return self.__name
+if__name__ == "__main__":	#主函数
+teacher = Teacher（"Tom"）	#对象使用小写
+print teacher.getName()		#使用“.”来访问getName（）方法
+
+例2：
+import math
+print math.pi	#通过“.”访问math模块中的π 
+a = math.sqrt(9.0)	#访问math.sqrt函数
+print "a=",a
+
+
+代码缩进Tab
+缩进错误：IndentationError
+用:区分层次关系，相当于“{”
+空行不是语法部分
+
+数据类型：数字类型、字符串类型、列表（List）、元组（tuple）、字典（dictionary）
+
+数字类型：整型，长整型，浮点型，复数类型
+复数：实部+虚部
+Python会实现数值和数据类型的关联和类型转换等操作，无需声明变量数据
+	根据数值大小自动将整型->长整型
+	只有双精度浮点型数据
+任何数据变量都是对象，type类查询变量类型
+type类：内置模块（__builtin__）,返回变量类型或创建新的类型（解释器自动导入，不用import）
+
+字符串类型:
+Python引用，单引号、双引号、三引号
+单双：定义字符串，所有空格和制表符被保留
+三引号：特有语法，定义多行字符串，在三引号里面还可以使用单双引号和换行符...
+例：
+print '''This is the first line.
+This is the Second time.
+"What's up",Asked
+"Don't kown！"
+'''
+三引号里面的单床引号作为字符输出
+
+转义字符“\”
+"What' up" == 'What\' up'
+“\”放在末尾表示续行而不是换行
+
+字符串也是变量，可以通过help（str）查看方法列表
+
+例3：
+#!/user/bin/python
+#-*-coding:UTF-8-*-
+name = 'Swappn'	#创建字符串变量name
+if name.startswith('Swa')	#测试字符串开头
+	print 'Yes,the string starts with "Swa"
+if 'a' in name: 
+	print 'Yes,it contains the string "a"
+if name.find('wap')!= -1
+	print 'Yes,it contains the string "wap"
+find方法：找出给定字符串“真”，布尔值
+
+如果输出的字符包含单引号，可以使用双引号表示字符串
+如果输出的字符包含双引号，可以使用单引号表示字符串
+
+变量：
+命名  首字母必须大小写字母或者_;其他字符字母、_、数字
+例：
+s = 200
+print id(s)
+s = 500 
+print id(s)
+python每次赋值新变量，即使创建变量名相同，但变量的标识不相同！！
+可以在一条语句赋值多个变量
+a,b,c = 1,2,5
+
+全局变量
+不同函数、类、文件共享的变量，可被内外部访问，任何函数
+使用global声明引用全局变量
+变量名相同的变量并非表示同一变量，尽量避免！！！
+可以单独创建全局变量_global.py 然后import _global
+尽量避免使用全局变量，因为它是共有的，谁都有权利改动它，然后第三方使用时可能是改动后的变量
+
+局部变量
+函数或代码模块范围使用的变量，函数和代码模块一旦结束，局部变量生命周期也结束
+Python能管理变量的生命周期，采用垃圾回收的机制对变量进行回收
+
+运算
+* * 幂：3 * * 2 =9
+%取模（余数）8 % 5 =3
+// 取整（商的整数部分）8 // 5 =1
+python 不支持自增运算 i++（！！！） 	但是i += 1 允许
+！= ，<> 不等于
+优先级
+低——高
+Lambda =>;or;and;not x;in,not in;is,is not;<,<=,>,>=,!=,==;|;^;&;<<,>>;+,-;*,/,%;+x,-x(正负号);~x;* *
+
+文件类型
+源代码文件.py或.pyw
+.py可以直接运行；.pyw专门用于开发图形用户界面由pythonw.exe执行
+字节代码文件.pyc
+优化代码文件.pyo
+保密代码，将源码编译为字节文件，可以其他用户被使用不可以被查看和修改
+
+内置数据结构
+元组（tuple）、列表（List）、字典（dictionary）、序列（sequence）
+元组：每个元素可以存储不同类型的数据
+例：元组创建
+zoo = （'wolf','elephant','penguin'）	#创建数组，不同类型用逗号分开
+emptytuple（）	#空元组
+newzoo = （'wolf',）	#必须加逗号才能识别出是元组
+
+定制字符串
+%cASCII，%s字符串,%d整数,%u无符号整数,%o八进制,%x十六进制,%f浮点数（可指定小数点后精度）,%e科学计数法定制浮点数
+如果要输出字符串“%”则应“%%”
+写的细么？我觉得还好，一点一点吃透
